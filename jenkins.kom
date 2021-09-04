@@ -19,7 +19,7 @@ pipeline  {
         stages {  
             stage("cat /etc/issue"){
                 steps {
-                    echo "Ubuntu 20.04.2 LTS \n \l";
+                    echo "Ubuntu 20.04.2 LTS ";
                 }
             }
     //    stage("Create docker image") {
