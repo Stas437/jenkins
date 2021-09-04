@@ -1,42 +1,42 @@
-#! groovy
-//    great Jenkinsfile
-properties ([disableConcurrentBuilds ()])
-pipeline {
+#!groovy
+//  groovy Jenkinsfile
+properties([disableConcurrentBuilds()])
+pipeline  {
     agent { 
-        label " master "
+        label 'master'
         }
     options {
-        buildDiscarder (logRotator ( numToKeepStr : ' 10 ' , artifactNumToKeepStr : ' 10 ' ))
-        timestamps ()
+        buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
+        timestamps()
     }
-    stage {
-        stage ( " Print Hello " )
+    stages {
+        stage("Print hello")
         steps {
-            echo “ Hello world! " ;
-        stage ( " Print Hello " ) {
+            echo "Hello world!";
+        stage("Print hello"){
             steps {
-                echo “ Hello world! " ;
+                echo "Hello world!";
             }
         }
-    //      stage ("Create a docker image") {
-   //          steps {
-   //               echo 'Create docker image ...'
-   //               dir ('.') {
-  //                   sh "docker build -t macnaer / chatterboxserver."
-   //               }
+    //    stage("Create docker image") {
+   //         steps {
+   //             echo 'Creating docker image ...'
+   //              dir ('.') {
+  //                  sh "docker build -t macnaer/chatterboxserver . "
+   //              }
+ //           }
+  //       }
+  //      stage("docker login") {
+ //           steps {
+ //               echo " ============== docker login =================="
+ //               withCredentials([usernamePassword(credentialsId: 'DockerHub-Credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+//                     sh '' '
+ //                   docker login -u $USERNAME -p $PASSWORD
+//                    '' '
+//                 }
  //            }
-  //        }
-  //        stage ("docker login") {
- //            steps {
- //                 echo "============== Docker login ==================="
- //                withCredentials ([usernamePassword (credentialsId: 'DockerHub-Credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-//                      ш '' '
- //                     docker login -u $ USERNAME -p $ PASSWORD
-//                     '' '
-//                  }
- //             }
-//          }
-//         stage ("docker push") {
-//             steps {
- //                 echo "============== pushing the image ==================="
- //                 ш '' '
+//         }
+//        stage("docker push") {
+//            steps {
+ //               echo " ============== pushing image =================="
+ //                sh '' '
