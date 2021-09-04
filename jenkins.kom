@@ -1,6 +1,7 @@
 #!groovy
 //  groovy Jenkinsfile
 properties([disableConcurrentBuilds()])
+
 pipeline  {
     agent { 
         label 'master'
@@ -40,5 +41,3 @@ pipeline  {
 //            steps {
  //               echo " ============== pushing image =================="
  //                sh '' '
-        }
-    }
