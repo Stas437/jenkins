@@ -1,6 +1,7 @@
 #!groovy
 //  groovy Jenkinsfile
 properties([disableConcurrentBuilds()])
+
 pipeline  {
     agent { 
         label 'master'
@@ -9,7 +10,7 @@ pipeline  {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
     }
-    stage {
+    stages {
         stage("Print hello")
         steps {
             echo "Hello world!";
