@@ -40,3 +40,4 @@ pipeline  {
 //            steps {
  //               echo " ============== pushing image =================="
  //                sh '' '
+        }
