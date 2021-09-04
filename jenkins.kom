@@ -9,7 +9,7 @@ pipeline  {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
     }
-    stages {
+    stage {
         stage("Print hello")
         steps {
             echo "Hello world!";
