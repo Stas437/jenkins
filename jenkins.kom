@@ -1,0 +1,42 @@
+#! groovy
+//    great Jenkinsfile
+properties ([disableConcurrentBuilds ()])
+pipeline {
+    agent { 
+        label " master "
+        }
+    options {
+        buildDiscarder (logRotator ( numToKeepStr : ' 10 ' , artifactNumToKeepStr : ' 10 ' ))
+        timestamps ()
+    }
+    stage {
+        stage ( " Print Hello " )
+        steps {
+            echo “ Hello world! " ;
+        stage ( " Print Hello " ) {
+            steps {
+                echo “ Hello world! " ;
+            }
+        }
+    //      stage ("Create a docker image") {
+   //          steps {
+   //               echo 'Create docker image ...'
+   //               dir ('.') {
+  //                   sh "docker build -t macnaer / chatterboxserver."
+   //               }
+ //            }
+  //        }
+  //        stage ("docker login") {
+ //            steps {
+ //                 echo "============== Docker login ==================="
+ //                withCredentials ([usernamePassword (credentialsId: 'DockerHub-Credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+//                      ш '' '
+ //                     docker login -u $ USERNAME -p $ PASSWORD
+//                     '' '
+//                  }
+ //             }
+//          }
+//         stage ("docker push") {
+//             steps {
+ //                 echo "============== pushing the image ==================="
+ //                 ш '' '
