@@ -1,4 +1,5 @@
 FROM httpd:latest
+COPY jenkins /bootstrap.min.css
 <!DOCTYPE html>
 <html lang="en">
 
