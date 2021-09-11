@@ -13,73 +13,72 @@ pipeline  {
     stages {
         stage("Print hello"){
             steps {
-                echo "Hello world!";
+                sh '''
+                    echo "Hello world!";
+                    cat /etc/os-release
+                    df -h
+                '''
+                
             }
         }
-        stages {  
-            stage("cat /etc/issue"){
-                steps {
-                    echo "Ubuntu 20.04.2 LTS ";
-                }
-            }
     //    stage("Create docker image") {
    //         steps {
    //             echo 'Creating docker image ...'
-   //              dir ('.') {
+   //             dir('.'){
   //                  sh "docker build -t macnaer/chatterboxserver . "
-   //              }
- //           }
-  //       }
+   //             }
+ //          }
+  //      }
   //      stage("docker login") {
  //           steps {
  //               echo " ============== docker login =================="
  //               withCredentials([usernamePassword(credentialsId: 'DockerHub-Credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-//                     sh '' '
+//                    sh '''
  //                   docker login -u $USERNAME -p $PASSWORD
-//                    '' '
-//                 }
- //            }
-//         }
+//                   '''
+//                }
+ //           }
+//        }
 //        stage("docker push") {
 //            steps {
  //               echo " ============== pushing image =================="
- //                sh '' '
+ //               sh '''
  //               docker push macnaer/chatterboxserver:latest
- //                '' '
-  //           }
- //        }
+ //               '''
+  //          }
+ //       }
  //       stage("docker stop") {
  //           steps {
  //               echo " ============== stoping all images =================="
- //                sh '' '
+ //               sh '''
  //               docker stop chatterboxserver
-  //               '' '
-  //           }
-//         }
+  //              '''
+  //          }
+//        } 
 //        stage("docker remove") {
 //            steps {
  //               echo " ============== removing all docker containers =================="
-  //               sh '' '
+  //              sh '''
    //             docker rm chatterboxserver
-  //               '' '
- //            }
- //        }
+  //              '''
+ //           }
+ //       }
  //       stage("docker run") {
  //           steps {
  //               echo " ============== starting chatterbox server =================="
- //                sh '' '
+ //               sh '''
  //               docker run -d --restart=always --name chatterboxserver -p 3200:3200 macnaer/chatterboxserver
- //               '' '
- //            }
-  //       }
+ //              '''
+ //           }
+  //      }
         // stage("Deploy to stage server") {
         //     steps {
         //         echo " ============== Running playbook =================="
-        //          sh '' '
+        //         sh '''
         //         ansible-playbook toolbox/ansible/playbooks/demloyToStageServer.yml
-        //          '' '
-        //      }
-        // }
+        //         '''
+        //     }
+        //}
+
    }
-}
 }
