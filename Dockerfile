@@ -1,3 +1,3 @@
 FROM httpd:latest
-COPY jenkins /bootstrap.min.css
+COPY jenkins/bootstrap.min.css
 ENTRYPOINT ["/bootstrap.min.css"]
