@@ -1,3 +1,2 @@
 FROM httpd:latest
-COPY jenkins/bootstrap.min.css
-ENTRYPOINT ["/bootstrap.min.css"]
+COPY ./my-httpd.conf /usr/local/apache2/conf/httpd.conf
