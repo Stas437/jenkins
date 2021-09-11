@@ -11,16 +11,16 @@ pipeline  {
         timestamps()
     }
     stages {
-        stage("Print hello"){
-            steps {
-                sh '''
-                    echo "Hello world!";
-                    cat /etc/os-release
-                    df -h
-                '''
-                
-            }
-        }
+        //stage("Print hello"){
+            //steps {
+             //   sh '''
+                 //   echo "Hello world!";
+                 //   cat /etc/os-release
+                 //   df -h
+               // '''
+            //    
+           // }
+       // }
         stage("Create docker image") {
             steps {
                 echo 'Creating docker image ...'
