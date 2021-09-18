@@ -59,18 +59,17 @@ pipeline  {
             steps {
                 echo " ============== removing all docker containers =================="
                 sh '''
-                docker rm $(docker ps -a -f status=exited -q)
+                docker rm $(docker ps -a -q)
                 '''
             }
         }
- //       stage("docker run") {
- //           steps {
- //               echo " ============== starting chatterbox server =================="
- //               sh '''
- //               docker run -d --restart=always --name chatterboxserver -p 3200:3200 macnaer/chatterboxserver
- //              '''
- //           }
-  //      }
+        stage("docker run") {
+            steps {
+                echo " ============== starting chatterbox server =================="
+                sh '''
+                docker run -d --restart=always --name webserver -p 80:80 stanislav437/testsite
+            }
+        }
         // stage("Deploy to stage server") {
         //     steps {
         //         echo " ============== Running playbook =================="
