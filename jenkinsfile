@@ -68,6 +68,7 @@ pipeline  {
                 echo " ============== starting chatterbox server =================="
                 sh '''
                 docker run -d --restart=always --name webserver -p 80:80 stanislav437/testsite
+                '''
             }
         }
         // stage("Deploy to stage server") {
