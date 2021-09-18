@@ -43,7 +43,7 @@ pipeline  {
             steps {
                 echo " ============== pushing image =================="
                 sh '''
-                docker push stanislav437/chaterboxserver:latest
+                docker push stanislav437/testsite
                 '''
             }
         }
