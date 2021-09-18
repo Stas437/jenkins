@@ -47,22 +47,22 @@ pipeline  {
                 '''
             }
         }
- //       stage("docker stop") {
- //           steps {
- //               echo " ============== stoping all images =================="
- //               sh '''
- //               docker stop chatterboxserver
-  //              '''
-  //          }
-//        } 
-//        stage("docker remove") {
-//            steps {
- //               echo " ============== removing all docker containers =================="
-  //              sh '''
-   //             docker rm chatterboxserver
-  //              '''
- //           }
- //       }
+        stage("docker stop") {
+            steps {
+                echo " ============== stoping all images =================="
+                sh '''
+                docker stop wizardly_antonelli
+                '''
+            }
+        } 
+        stage("docker remove") {
+            steps {
+                echo " ============== removing all docker containers =================="
+                sh '''
+                docker rm wizardly_antonelli
+                '''
+            }
+        }
  //       stage("docker run") {
  //           steps {
  //               echo " ============== starting chatterbox server =================="
