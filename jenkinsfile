@@ -51,7 +51,7 @@ pipeline  {
             steps {
                 echo " ============== stoping all images =================="
                 sh '''
-                docker stop wizardly_antonelli
+                docker stop $(docker ps -a -q)
                 '''
             }
         } 
@@ -59,17 +59,9 @@ pipeline  {
             steps {
                 echo " ============== removing all docker containers =================="
                 sh '''
-                docker rm wizardly_antonelli
+                docker rm $(docker ps -a -q)
                 '''
             }
-        }
-        stage("docker remove image") {
-              steps {
-                  echo " ============= removing all docker images =================="
-                  sh '''
-                  docker rmi f34528d8e714
-                  '''
-              }
         }
  //       stage("docker run") {
  //           steps {
