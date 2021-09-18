@@ -63,6 +63,14 @@ pipeline  {
                 '''
             }
         }
+        stage("docker remove image)
+              steps {
+                  echo " ============= removing all docker images =================="
+                  sh '''
+                  docker rmi f34528d8e714
+                  '''
+              }
+        }
  //       stage("docker run") {
  //           steps {
  //               echo " ============== starting chatterbox server =================="
